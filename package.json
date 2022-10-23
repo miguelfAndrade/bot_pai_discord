@@ -1,0 +1,28 @@
+{
+  "name": "bot_pai_discord",
+  "version": "1.0.0",
+  "description": "This is a discord bot that joins your voice channel and plays the \"SIIIUUU!\" of Cristiano Ronaldo. Once finished the bot leaves.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy-cmd": "cd src && node deploy-commands.js",
+    "start": "npm run deploy-cmd && node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguelfAndrade/bot_pai_discord.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miguelfAndrade/bot_pai_discord/issues"
+  },
+  "homepage": "https://github.com/miguelfAndrade/bot_pai_discord#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.8.0",
+    "@discordjs/voice": "^0.13.0",
+    "discord.js": "^14.6.0",
+    "ffmpeg-static": "^5.1.0"
+  }
+}
