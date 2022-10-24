@@ -1,10 +1,15 @@
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, Events, GatewayIntentBits, Intents } = require('discord.js');
 const fs = require('node:fs');
 const path = require('node:path');
+const dotenv = require('dotenv');
 
-const { token } = require('../config.json');
+dotenv.config();
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+// const { token } = require('../config.json');
+const token = process.env.TOKEN;
+
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates] });
+// const player = createAudioPlayer();
 
 client.commands = new Collection();
 
@@ -38,7 +43,7 @@ client.on(Events.InteractionCreate, async interaction => {
 		console.error(`No command matching ${interaction.commandName} was found.`);
 		return;
 	}
-
+	
 	try {
 		await command.execute(interaction);
 	} catch (error) {
