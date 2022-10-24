@@ -22,5 +22,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - run: cd src && node deploy-commands.js
+      - run: npm run deploy-cmd
       - run: TOKEN=${{ secrets.TOKEN }} node .
