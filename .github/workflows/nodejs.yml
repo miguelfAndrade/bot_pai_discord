@@ -21,9 +21,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-        run: |
-          npm install
-          npm run start
-        env:
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          TOKEN: ${{ secrets.TOKEN }}
+          env:
+            CLIENT_ID: ${{ secrets.CLIENT_ID }}
+            TOKEN: ${{ secrets.TOKEN }}
+      - run: npm install
+      - run: npm run start
