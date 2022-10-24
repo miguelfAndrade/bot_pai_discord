@@ -11,20 +11,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x]
-
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install Dependencies
-      - run: npm install
-      - name: Start Application
-      - run: npm run start
+          node-version: 16
+      - name: Install dependencies
+        run: npm ci
         env:
             CLIENT_ID: ${{ secrets.CLIENT_ID }}
             TOKEN: ${{ secrets.TOKEN }}
+      - run: npm run start
