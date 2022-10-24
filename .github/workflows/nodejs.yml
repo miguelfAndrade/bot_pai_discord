@@ -18,7 +18,8 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: npm ci
+      - name: Start App
+        run: npm run start
         env:
             CLIENT_ID: ${{ secrets.CLIENT_ID }}
             TOKEN: ${{ secrets.TOKEN }}
-      - run: npm run start
