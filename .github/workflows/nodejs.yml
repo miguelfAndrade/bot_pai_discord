@@ -11,12 +11,6 @@ env:
   TOKEN: ${{ secrets.TOKEN }}
 
 jobs:
-  print:
-    runs-on: ubuntu-lastest
-    steps:
-      - name: Step1
-        run: echo "The ID key is:$CLIENT_ID"
-  
   build:
     runs-on: ubuntu-latest
     steps:
@@ -24,6 +18,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: Print
+        run: echo "The ID key is:$CLIENT_ID"
       - name: Install dependencies
         run: npm ci
       - name: Start App
