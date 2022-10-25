@@ -9,13 +9,16 @@ on:
 env:
   CLIENT_ID: ${{ secrets.CLIENT_ID }}
   TOKEN: ${{ secrets.TOKEN }}
-  
 
 jobs:
+  print:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Step1
+        run: echo "The ID key is:$CLIENT_ID"
+  
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
