@@ -7,7 +7,7 @@ on:
     branches: [ main ]
     
 env:
-  CLIENT_ID: ${{ secrets.CLIENT_ID }}
+  CLIENT_ID: ${{ secrets.CLIENT_I }}
   TOKEN: ${{ secrets.TOKEN }}
 
 jobs:
