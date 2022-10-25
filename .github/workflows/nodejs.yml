@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 16
       - name: Print
-        run: echo "The ID key is:$CLIENT_ID" && echo "The TOKEN key is:$BOT_TOKEN"
+        run: echo "The ID key is:$CLIENT_ID" && echo "The TOKEN key is:$TOKEN"
       - name: Install dependencies
         run: npm ci
       - name: Start App
