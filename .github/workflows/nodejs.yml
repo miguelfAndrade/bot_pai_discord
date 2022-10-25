@@ -7,8 +7,8 @@ on:
     branches: [ main ]
     
 env:
-  CLIENT_ID: ${{ env.CLIENT_ID }}
-  TOKEN: ${{ env.TOKEN }}
+  CLIENT_ID: ${{ secrets.BOT_CLIENT_ID }}
+  TOKEN: ${{ secrets.TOKEN }}
 
 jobs:
   build:
